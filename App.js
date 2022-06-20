@@ -16,6 +16,18 @@ const theme = {
 }
 
 const App = () => {
+  const [loaded] = useFonts({
+    InterBold: require("./assets/fonts/Inter-Bold.ttf"),
+    InterLight: require("./assets/fonts/Inter-Light.ttf"),
+    InterMedium: require("./assets/fonts/Inter-Medium.ttf"),
+    InterRegular: require("./assets/fonts/Inter-Regular.ttf"),
+    InterSemiBold: require("./assets/fonts/Inter-SemiBold.ttf"),
+    PTSans: require("./assets/fonts/PTSans-Regular.ttf"),
+    PTSansBold: require("./assets/fonts/PTSans-Bold.ttf"),
+    Quicksand: require("./assets/fonts/Quicksand-VariableFont_wght.ttf")
+  })
+
+  if (!loaded) return null;
   return (
     <NavigationContainer theme={theme}>
       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
